@@ -10,5 +10,7 @@ done
 HOME_DIR="$( cd -P "$( dirname "$SOURCE" )/../" && pwd )"
 
 docker run -it --rm -v $HOME_DIR:/opt/messenger \
+-v ${HOME_DIR}/.composer:/opt/messenger/.composer \
+-e COMPOSER_CACHE_DIR=/opt/messenger/.composer \
 -w /opt/messenger \
 -u 1000:1000  nmolleruq/phpcomposer:7.2 $@
