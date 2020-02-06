@@ -19,3 +19,4 @@ yarn-error.log
 public/uploads/images
 ###< CUSTOM ###
 /.idea
+.composer
