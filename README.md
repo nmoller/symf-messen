@@ -15,7 +15,7 @@ Make sure you have [Composer installed](https://getcomposer.org/download/)
 and then run:
 
 ```
-composer install
+bin/mydocker.sh composer install
 ```
 
 You may alternatively need to run `php composer.phar install`, depending
@@ -73,9 +73,10 @@ apt-get update
 apt-get install wget
 wget https://get.symfony.com/cli/installer -O - | bash
 mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+# keep it running because we need to be root to use symfony command
+# TODO: add symfony command to image.
 
-docker exec -it symf-dev  bash
-symfony serve
+docker exec -it symf-dev symfony serve
 ```
 
 Then, to start the web server, open a terminal, move into the
