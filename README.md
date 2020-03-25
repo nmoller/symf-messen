@@ -68,7 +68,9 @@ here: https://symfony.com/download - you only need to do this
 once on your system.
 
 ```
-docker run -it --name symf-dev -v $(pwd):/opt/messenger -w /opt/messenger   nmolleruq/phpcomposer:7.2 bash
+docker run -it --name symf-dev -p 8000:8000 \
+ -v $(pwd):/opt/messenger -w /opt/messenger   \
+nmolleruq/phpcomposer:7.2 bash
 apt-get update
 apt-get install wget
 wget https://get.symfony.com/cli/installer -O - | bash
